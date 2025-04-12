@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: realtime-chat-app
+    env: docker
+    repo: https://github.com/Parsa132000/realtime-chat.git
+    plan: free
+    region: oregon
+    branch: main
+    healthCheckPath: /ping
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: REDIS_HOST
+        value: redis
+
+  - type: redis
+    name: chat-redis
+    plan: free
