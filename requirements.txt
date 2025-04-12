@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+redis==4.6.0
+python-dotenv
+python-jose[cryptography]
+python-multipart
