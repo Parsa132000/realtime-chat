@@ -13,3 +13,9 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 app.include_router(auth_router)
 app.add_api_websocket_route("/ws/{room_id}", websocket_endpoint)
+
+
+
+@app.get("/ping")
+async def ping():
+    return {"status": "ok"}
