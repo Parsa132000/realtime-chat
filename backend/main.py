@@ -26,7 +26,6 @@ app.add_api_websocket_route("/ws/{room_id}", websocket_endpoint)
 def root():
     return {"message": "ok"}
 
-
 @app.get("/ping")  # ✅ Add this route
 def ping():
     return {"status": "ok"}
