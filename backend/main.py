@@ -17,9 +17,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ✅ Static frontend (optional; you can remove this if frontend is fully separate)
-frontend_path = os.path.join(os.path.dirname(__file__), "../frontend")
-app.mount("/static", StaticFiles(directory=frontend_path), name="static")
 
 # ✅ API + WebSocket routes
 app.include_router(auth_router)
