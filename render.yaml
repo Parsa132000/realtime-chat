@@ -7,10 +7,11 @@ services:
     region: oregon
     branch: main
     healthCheckPath: /ping
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./Dockerfile  # ✅ good
+    autoDeploy: true              # ✅ optional: ensure auto-deploy from GitHub
     envVars:
       - key: REDIS_HOST
-        value: redis
+        value: chat-redis         # ✅ make sure this matches your redis service name
 
   - type: redis
     name: chat-redis
