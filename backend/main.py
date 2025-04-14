@@ -2,10 +2,8 @@ import os
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
-from .app.websocket import websocket_endpoint
-from .app.auth import auth_router
-# from backend.app.auth import auth_router
-# from backend.app.websocket import websocket_endpoint
+from app.websocket import websocket_endpoint
+from app.auth import auth_router
 
 
 app = FastAPI()
