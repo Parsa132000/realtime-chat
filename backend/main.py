@@ -3,8 +3,8 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.auth import auth_router
-from app.websocket import websocket_endpoint
+from backend.app.auth import auth_router
+from backend.app.websocket import websocket_endpoint
 
 app = FastAPI()
 
