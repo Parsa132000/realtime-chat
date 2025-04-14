@@ -6,6 +6,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from backend.app.auth import auth_router
 from backend.app.websocket import websocket_endpoint
 
+
+
 app = FastAPI()
 
 # ✅ CORS: Allow your Vercel frontend to access backend APIs
