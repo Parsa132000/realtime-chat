@@ -10,7 +10,7 @@ function connectWebSocket() {
   }
 
   const backendUrl = "https://realtime-chat-kjm8.onrender.com"; // 🔁 Replace with your actual Render backend domain
-  const socketUrl = `${backendUrl}/ws/${room}?token=${token}`;
+  const socketUrl = backendUrl.replace(/^http/, "ws") + `/ws/${room}?token=${token}`;
 
   socket = new WebSocket(socketUrl);
 
