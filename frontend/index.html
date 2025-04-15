@@ -8,7 +8,10 @@
 <body>
   <h1>💬 Realtime Chat</h1>
   <p>Room: <input id="room" value="general" /></p>
-  <p>Token: <input id="token" style="width: 60%;" /></p>
+  <p>
+    Token: <input id="token" style="width: 60%;" />
+    <button onclick="connectWebSocket()">Connect</button>
+  </p>
   <div id="chat"></div>
   <input id="message" placeholder="Type message..." />
   <button onclick="sendMessage()">Send</button>
