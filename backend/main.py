@@ -11,7 +11,7 @@ app = FastAPI()
 # ✅ CORS: Allow your Vercel frontend to access backend APIs
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://realtime-chat-three-lime.vercel.app" , "https://realtime-chat-kjm8.onrender.com" ],  # 🔁 Replace with your real Vercel domain
+    allow_origins=["*" ],  # 🔁 Replace with your real Vercel domain
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
