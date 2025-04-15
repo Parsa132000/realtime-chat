@@ -1,24 +1,27 @@
 let socket;
 
 function connectWebSocket() {
-  const room = document.getElementById("room").value.trim();
-  const token = document.getElementById("token").value.trim();
-
-  if (!token) {
-    appendMessage("⚠️ Please enter a token.");
-    return;
+    const room = document.getElementById("room").value.trim();
+    const token = document.getElementById("token").value.trim();
+  
+    if (!token) {
+      appendMessage("⚠️ Please enter a token.");
+      return;
+    }
+  
+    const backendUrl = "https://realtime-chat-kjm8.onrender.com";
+    const socketUrl = backendUrl.replace(/^http/, "ws") + `/ws/${room}?token=${token}`;
+  
+    console.log("Connecting to:", socketUrl); // ✅ Debug log
+  
+    socket = new WebSocket(socketUrl);
+  
+    socket.onopen = () => appendMessage("✅ Connected to chat");
+    socket.onmessage = (event) => appendMessage(event.data);
+    socket.onclose = () => appendMessage("❌ Disconnected");
+    socket.onerror = (error) => appendMessage("⚠️ Connection error");
   }
-
-  const backendUrl = "https://realtime-chat-kjm8.onrender.com"; // 🔁 Replace with your actual Render backend domain
-  const socketUrl = backendUrl.replace(/^http/, "ws") + `/ws/${room}?token=${token}`;
-
-  socket = new WebSocket(socketUrl);
-
-  socket.onopen = () => appendMessage("✅ Connected to chat");
-  socket.onmessage = (event) => appendMessage(event.data);
-  socket.onclose = () => appendMessage("❌ Disconnected");
-  socket.onerror = (error) => appendMessage("⚠️ Connection error");
-}
+  
 
 function appendMessage(msg) {
   const chat = document.getElementById("chat");
