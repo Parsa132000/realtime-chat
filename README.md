@@ -15,7 +15,7 @@ This is a real-time, multi-user chat application built using **FastAPI**, **WebS
 
 ## 🚀 Live Demo
 
-Test it here 👉 [https://your-app-name.onrender.com/static/chat.html](https://your-app-name.onrender.com/static/chat.html)
+Test it here 👉 [https://realtime-chat-kjm8.onrender.com](https://realtime-chat-kjm8.onrender.com)
 
 > Replace with your actual Render URL after deployment.
 
